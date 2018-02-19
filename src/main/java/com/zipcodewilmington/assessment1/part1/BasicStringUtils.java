@@ -9,7 +9,8 @@ public class BasicStringUtils {
      * @return string with identical content, and the first character capitalized
      */
     public static String camelCase(String str) {
-        return null;
+        String firstLetter = str.substring(0, 1);
+        return firstLetter.toUpperCase() + str.substring(1);
     }
 
     /**
@@ -17,7 +18,8 @@ public class BasicStringUtils {
      * @return string with identical contents, in the reverse order
      */
     public static String reverse(String str) {
-        return null;
+        StringBuilder sb = new StringBuilder(str).reverse();
+        return sb.toString();
     }
 
     /**
@@ -25,7 +27,8 @@ public class BasicStringUtils {
      * @return string with identical contents, in reverse order, with first character capitalized
      */
     public static String reverseThenCamelCase(String str) {
-        return null;
+        String reverse = reverse(str);
+        return camelCase(reverse);
     }
 
 
@@ -34,7 +37,7 @@ public class BasicStringUtils {
      * @return string with identical contents excluding first and last character
      */
     public static String removeFirstAndLastCharacter(String str) {
-        return null;
+        return str.substring(1, str.length()-1);
     }
 
     /**
@@ -42,6 +45,15 @@ public class BasicStringUtils {
      * @return string with identical characters, each with opposite casing
      */
     public static String invertCasing(String str) {
-        return null;
+        char[] arrayFromString = str.toCharArray();
+        for (int i = 0; i < arrayFromString.length; i++) {
+            char currentCharacterOfIteration = arrayFromString[i];
+            if (Character.isUpperCase(currentCharacterOfIteration)) {
+                arrayFromString[i] = Character.toLowerCase(currentCharacterOfIteration);
+            } else if (Character.isLowerCase(currentCharacterOfIteration)) {
+                arrayFromString[i] = Character.toUpperCase(currentCharacterOfIteration);
+            }
+        }
+        return new String(arrayFromString);
     }
 }

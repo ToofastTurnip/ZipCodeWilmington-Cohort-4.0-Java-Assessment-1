@@ -6,14 +6,20 @@ package com.zipcodewilmington.assessment1.part1;
 public class RockPaperSissorsEvaluator {
     protected static final String ROCK = "rock";
     protected static final String PAPER = "paper";
-    protected static final String SCISSOR = "scissor";
+    protected static final String SCISSOR = "scissors";
 
     /**
      * @param handSign a string representative of a hand sign
      * @return the respective winning move
      */
     public String getWinningMove(String handSign) {
-        return null;
+        if (handSign.equals(ROCK)) {
+            return PAPER;
+        } else if (handSign.equals(PAPER)) {
+            return SCISSOR;
+        } else {
+            return ROCK;
+        }
     }
 
     /**
@@ -21,7 +27,13 @@ public class RockPaperSissorsEvaluator {
      * @return the respective losing move
      */
     public String getLosingMove(String handSign) {
-        return null;
+        if (handSign.equals(ROCK)) {
+            return SCISSOR;
+        } else if (handSign.equals(PAPER)) {
+            return ROCK;
+        } else {
+            return PAPER;
+        }
     }
 
     /**
@@ -30,6 +42,10 @@ public class RockPaperSissorsEvaluator {
      * @return a string representative of the winning hand sign between the two players
      */
     public String getWinner(String handSignOfPlayer1, String handSignOfPlayer2) {
-        return null;
+        if ((getWinningMove(handSignOfPlayer1)).equals(handSignOfPlayer2)) {
+            return handSignOfPlayer2;
+        } else {
+            return handSignOfPlayer1;
+        }
     }
 }
