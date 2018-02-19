@@ -22,15 +22,8 @@ public class PetOwner {
      * @param pet pet to be added to the composite collection of Pets
      */
     public void addPet(Pet pet) {
-
-        /*
-        ArrayList<Pet> temp = new ArrayList<>(Arrays.asList(pets));
-        temp.add(pet);
-        this.pets = temp.toArray(new Pet[temp.size()]);
-        */
-
-        this.pets[0] = pet;
-
+        Pet[] hereYouGo = {pet};
+        this.pets = hereYouGo;
     }
 
     /**
@@ -120,4 +113,5 @@ public class PetOwner {
             sum += i;
         return sum;
     }
+
 }
