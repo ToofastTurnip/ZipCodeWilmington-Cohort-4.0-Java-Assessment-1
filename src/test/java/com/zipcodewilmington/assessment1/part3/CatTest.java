@@ -7,7 +7,10 @@ import org.junit.Test;
  * Created by leon on 2/16/18.
  */
 public class CatTest {
+<<<<<<< HEAD
 
+=======
+>>>>>>> f476f0b621b52d7eb0a7e901f81b829891aeff98
     @Test
     public void nullaryConstructorTest() {
         // Given
